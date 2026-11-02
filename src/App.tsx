@@ -15,7 +15,7 @@ import { useRevealAll } from '@/hooks/useReveal';
 export default function App() {
   useRevealAll();
   return (
-    <div className="min-h-screen bg-ink text-nardo-100">
+    <div className="min-h-screen bg-white text-nardo-700">
       <Header />
       <main>
         <Hero />
@@ -34,14 +34,14 @@ export default function App() {
 
 function ContactSection() {
   return (
-    <section id="contact" className="relative py-24 sm:py-32">
+    <section id="contact" className="relative py-24 sm:py-32 bg-nardo-50">
       <div className="container grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
         <div className="reveal">
-          <span className="text-xs uppercase tracking-[0.25em] text-nardo-400">Get in touch</span>
-          <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-5xl font-700 tracking-tight text-white text-balance">
+          <span className="text-xs uppercase tracking-[0.25em] text-nardo-500">Get in touch</span>
+          <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-5xl font-700 tracking-tight text-ink text-balance">
             Book your hire or ask anything
           </h2>
-          <p className="mt-5 text-nardo-300 leading-relaxed max-w-md">
+          <p className="mt-5 text-nardo-600 leading-relaxed max-w-md">
             Send a message and we will come back to you fast. Prefer to talk? Call or text us
             directly.
           </p>
@@ -49,35 +49,35 @@ function ContactSection() {
           <div className="mt-8 space-y-3">
             <a
               href={`tel:${BUSINESS.phoneHref}`}
-              className="flex items-center gap-4 rounded-xl border border-white/10 bg-white/[0.03] p-4 hover:border-white/20 transition-colors"
+              className="flex items-center gap-4 rounded-xl border border-nardo-200 bg-white p-4 shadow-sm hover:border-nardo-300 transition-colors"
             >
-              <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/5 text-white">
+              <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-nardo-100 text-ink">
                 <Phone className="h-5 w-5" />
               </span>
               <div>
                 <div className="text-xs uppercase tracking-wider text-nardo-500">Phone</div>
-                <div className="text-white">{BUSINESS.phone}</div>
+                <div className="text-ink">{BUSINESS.phone}</div>
               </div>
             </a>
             <a
               href={`mailto:${BUSINESS.email}`}
-              className="flex items-center gap-4 rounded-xl border border-white/10 bg-white/[0.03] p-4 hover:border-white/20 transition-colors"
+              className="flex items-center gap-4 rounded-xl border border-nardo-200 bg-white p-4 shadow-sm hover:border-nardo-300 transition-colors"
             >
-              <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/5 text-white">
+              <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-nardo-100 text-ink">
                 <Mail className="h-5 w-5" />
               </span>
               <div>
                 <div className="text-xs uppercase tracking-wider text-nardo-500">Email</div>
-                <div className="text-white break-all">{BUSINESS.email}</div>
+                <div className="text-ink break-all">{BUSINESS.email}</div>
               </div>
             </a>
-            <div className="flex items-center gap-4 rounded-xl border border-white/10 bg-white/[0.03] p-4">
-              <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/5 text-white">
+            <div className="flex items-center gap-4 rounded-xl border border-nardo-200 bg-white p-4 shadow-sm">
+              <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-nardo-100 text-ink">
                 <MapPin className="h-5 w-5" />
               </span>
               <div>
                 <div className="text-xs uppercase tracking-wider text-nardo-500">Based in</div>
-                <div className="text-white">{BUSINESS.address}</div>
+                <div className="text-ink">{BUSINESS.address}</div>
               </div>
             </div>
           </div>

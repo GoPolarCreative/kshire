@@ -9,10 +9,10 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-ink text-nardo-100 font-sans antialiased;
+    @apply bg-white text-nardo-700 font-sans antialiased;
   }
   ::selection {
-    @apply bg-white text-ink;
+    @apply bg-ink text-white;
   }
 }
 

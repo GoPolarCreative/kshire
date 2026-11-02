@@ -28,21 +28,21 @@ const GEAR = [
 export default function Equipment() {
   const ref = useReveal<HTMLDivElement>();
   return (
-    <section id="equipment" className="relative py-24 sm:py-32 bg-ink-soft">
+    <section id="equipment" className="relative py-24 sm:py-32 bg-nardo-50">
       <div className="container">
         <div ref={ref} className="reveal max-w-2xl">
-          <span className="text-xs uppercase tracking-[0.25em] text-nardo-400">The gear</span>
-          <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-5xl font-700 tracking-tight text-white text-balance">
+          <span className="text-xs uppercase tracking-[0.25em] text-nardo-500">The gear</span>
+          <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-5xl font-700 tracking-tight text-ink text-balance">
             The equipment you get
           </h2>
-          <p className="mt-5 text-nardo-300 leading-relaxed">
+          <p className="mt-5 text-nardo-600 leading-relaxed">
             Compact, capable, and ready to work. Everything is maintained and hire-ready, with delivery available when you need it.
           </p>
-          <div className="mt-6 flex flex-wrap gap-x-5 gap-y-3 text-sm text-nardo-200">
+          <div className="mt-6 flex flex-wrap gap-x-5 gap-y-3 text-sm text-ink">
             <span className="w-full text-xs uppercase tracking-[0.2em] text-nardo-500">Standard hire includes</span>
             {['900mm mud bucket', '450mm GP bucket', '300mm GP bucket', 'Ripper', 'Hydraulic quick hitch'].map((item) => (
               <span key={item} className="inline-flex items-center gap-2">
-                <Check className="h-4 w-4 text-emerald-400" />
+                <Check className="h-4 w-4 text-emerald-600" />
                 {item}
               </span>
             ))}
@@ -79,7 +79,7 @@ function GearCard({
     <article
       ref={ref}
       style={{ transitionDelay: `${delay}ms` }}
-      className="reveal group relative overflow-hidden rounded-2xl border border-white/10 bg-ink"
+      className="reveal group relative overflow-hidden rounded-2xl border border-nardo-200 bg-ink shadow-sm"
     >
       <div className="aspect-[4/3] overflow-hidden">
         <img

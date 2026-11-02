@@ -38,15 +38,15 @@ export default function ContactForm() {
 
   if (status === 'success') {
     return (
-      <div className="flex flex-col items-center justify-center text-center gap-4 p-8 rounded-2xl bg-white/[0.04] border border-white/10 min-h-[420px]">
-        <CheckCircle2 className="h-14 w-14 text-emerald-400" />
-        <h3 className="font-display text-2xl font-600 text-white">Message sent</h3>
-        <p className="text-nardo-300 max-w-xs">
+      <div className="flex flex-col items-center justify-center text-center gap-4 p-8 rounded-2xl bg-white border border-nardo-200 shadow-xl shadow-ink/5 min-h-[420px]">
+        <CheckCircle2 className="h-14 w-14 text-emerald-600" />
+        <h3 className="font-display text-2xl font-600 text-ink">Message sent</h3>
+        <p className="text-nardo-600 max-w-xs">
           Thanks for reaching out. Keaton or Sarah will get back to you shortly.
         </p>
         <button
           onClick={() => setStatus('idle')}
-          className="mt-2 text-sm text-nardo-200 hover:text-white underline underline-offset-4"
+          className="mt-2 text-sm text-nardo-600 hover:text-ink underline underline-offset-4"
         >
           Send another
         </button>
@@ -57,14 +57,14 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={onSubmit}
-      className="rounded-2xl bg-white/[0.04] backdrop-blur-xl border border-white/10 p-6 sm:p-8 shadow-2xl"
+      className="rounded-2xl bg-white border border-nardo-200 p-6 sm:p-8 shadow-xl shadow-ink/5"
     >
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h3 className="font-display text-xl font-600 text-white">Get a free quote</h3>
-          <p className="text-xs text-nardo-400 mt-1">We reply fast, usually same day.</p>
+          <h3 className="font-display text-xl font-600 text-ink">Get a free quote</h3>
+          <p className="text-xs text-nardo-500 mt-1">We reply fast, usually same day.</p>
         </div>
-        <span className="hidden sm:flex h-2.5 w-2.5 rounded-full bg-emerald-400 animate-pulse" />
+        <span className="hidden sm:flex h-2.5 w-2.5 rounded-full bg-emerald-500 animate-pulse" />
       </div>
 
       <div className="space-y-4">
@@ -74,7 +74,7 @@ export default function ContactForm() {
           <Field label="Email" name="email" type="email" placeholder="you@email.com" required />
         </div>
         <div>
-          <label className="block text-xs uppercase tracking-wider text-nardo-400 mb-2">
+          <label className="block text-xs uppercase tracking-wider text-nardo-500 mb-2">
             Message
           </label>
           <textarea
@@ -82,13 +82,13 @@ export default function ContactForm() {
             rows={4}
             required
             placeholder="Tell us about your job, dates, and location."
-            className="w-full rounded-xl bg-ink-soft border border-white/10 px-4 py-3 text-white placeholder:text-nardo-500 focus:outline-none focus:border-white/40 focus:ring-1 focus:ring-white/20 transition-all resize-none"
+            className="w-full rounded-xl bg-nardo-50 border border-nardo-200 px-4 py-3 text-ink placeholder:text-nardo-400 focus:outline-none focus:bg-white focus:border-ink focus:ring-1 focus:ring-ink/10 transition-all resize-none"
           />
         </div>
       </div>
 
       {status === 'error' && (
-        <div className="mt-4 flex items-start gap-2 rounded-xl bg-red-500/10 border border-red-500/20 px-4 py-3 text-sm text-red-300">
+        <div className="mt-4 flex items-start gap-2 rounded-xl bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700">
           <AlertCircle className="h-4 w-4 mt-0.5 shrink-0" />
           <span>{errorMsg}</span>
         </div>
@@ -97,7 +97,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === 'loading'}
-        className="mt-6 w-full flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3.5 font-600 text-ink hover:bg-nardo-200 transition-all duration-300 disabled:opacity-60"
+        className="mt-6 w-full flex items-center justify-center gap-2 rounded-xl bg-ink px-6 py-3.5 font-600 text-white hover:bg-nardo-700 transition-all duration-300 disabled:opacity-60"
       >
         {status === 'loading' ? (
           <>
@@ -130,13 +130,13 @@ function Field({
 }) {
   return (
     <div>
-      <label className="block text-xs uppercase tracking-wider text-nardo-400 mb-2">{label}</label>
+      <label className="block text-xs uppercase tracking-wider text-nardo-500 mb-2">{label}</label>
       <input
         type={type}
         name={name}
         required={required}
         placeholder={placeholder}
-        className="w-full rounded-xl bg-ink-soft border border-white/10 px-4 py-3 text-white placeholder:text-nardo-500 focus:outline-none focus:border-white/40 focus:ring-1 focus:ring-white/20 transition-all"
+        className="w-full rounded-xl bg-nardo-50 border border-nardo-200 px-4 py-3 text-ink placeholder:text-nardo-400 focus:outline-none focus:bg-white focus:border-ink focus:ring-1 focus:ring-ink/10 transition-all"
       />
     </div>
   );
