@@ -2,17 +2,21 @@ import ContactForm from './ContactForm';
 import { ArrowRight, MapPin, Zap } from 'lucide-react';
 import { BUSINESS } from '@/lib/business';
 
+const HERO_IMG = '/IMG_6599.jpeg';
+const HERO_ALT = 'K&S Hire SANY SY18U excavator ready for hire in Warrnambool';
+
 export default function Hero() {
   return (
     <section id="top" className="relative min-h-screen flex items-center pt-28 pb-16 overflow-hidden bg-white">
-      <div className="absolute inset-0">
+      {/* Desktop: photo starts part way across so the digger sits between the copy and the form, at full strength */}
+      <div className="absolute inset-y-0 right-0 hidden lg:block lg:left-[44%] xl:left-[40%]">
         <img
-          src="/IMG_6599.jpeg"
-          alt="K&S Hire SANY SY18U excavator ready for hire in Warrnambool"
-          className="h-full w-full object-cover object-center"
+          src={HERO_IMG}
+          alt={HERO_ALT}
+          fetchPriority="high"
+          className="h-full w-full object-cover object-[50%_55%]"
         />
-        {/* Light scrim: solid white behind the copy, the machine shows through on the right */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-white/90 to-white/80 lg:bg-gradient-to-r lg:from-white lg:from-35% lg:via-white/85 lg:via-55% lg:to-white/0" />
+        <div className="absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-white to-white/0" />
         <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white to-transparent" />
       </div>
 
@@ -29,7 +33,7 @@ export default function Hero() {
             <span className="text-nardo-500">All in one hire.</span>
           </h1>
 
-          <p className="mt-6 text-lg text-nardo-600 leading-relaxed max-w-xl">
+          <p className="mt-6 text-lg text-nardo-600 leading-relaxed max-w-xl lg:max-w-md xl:max-w-lg">
             A complete DIY package from a family-owned business in Warrnambool. Hire a 1.9 tonne
             excavator paired with an 8x5 tipper trailer, with delivery available across the local
             area. No need to pay extra for waste removal.
@@ -59,6 +63,14 @@ export default function Hero() {
         </div>
 
         <div className="lg:col-span-5 lg:pl-4">
+          {/* Mobile and tablet: the digger as a full-colour photo above the form */}
+          <div className="lg:hidden mb-6 aspect-[5/4] overflow-hidden rounded-2xl border border-nardo-200 shadow-sm">
+            <img
+              src={HERO_IMG}
+              alt={HERO_ALT}
+              className="h-full w-full object-cover object-[50%_62%]"
+            />
+          </div>
           <ContactForm />
           <p className="mt-4 mx-auto flex w-fit items-center gap-2 rounded-full bg-white px-3 py-1 text-xs text-nardo-600 shadow-sm">
             <Zap className="h-3.5 w-3.5 text-amber-500" />
